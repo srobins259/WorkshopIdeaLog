@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let idea of ideas; let i = index">
+          <h2>{{idea.title}}</h2>
+          <h4>{{idea.user.displayName}}</h4>
+          <p>{{idea.description}}</p>
+          <p><i (click)="like(i, idea.id)" class="fas fa-heart"></i>&nbsp;{{idea.likes.length}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
