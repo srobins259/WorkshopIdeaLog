@@ -1,12 +1,20 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
+      <label for="">Name</label>
+      <input class="form-group form-control" [(ngModel)]="name" type="text">
+      <label for="">Description</label>
+      <input class="form-group form-control" [(ngModel)]="description" type="textarea">
+      <button (click)="addIdea()" class="btn btn-success">Save</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let idea of ideas; let i = index">
           <h2>{{idea.title}}</h2>
-          <h4>{{idea.user.displayName}}</h4>
           <p>{{idea.description}}</p>
-          <p><i (click)="like(i, idea.id)" class="fas fa-heart"></i>&nbsp;{{idea.likes.length}}</p>
+          <button (click)="deleteIdea(idea.id)" class="btn btn-danger">Delete</button>
         </li>
       </ul>
     </div>
